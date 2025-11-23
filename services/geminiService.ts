@@ -1,11 +1,25 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Mushroom } from "../types";
 
-const apiKey = process.env.API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+// Safely handle process.env for local/browser environments where 'process' is undefined
+const getApiKey = () => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      return process.env.API_KEY || '';
+    }
+  } catch (e) {
+    // Ignore error if process is accessed in strict browser env
+  }
+  return '';
+};
+
+const apiKey = getApiKey();
+// Only initialize AI if we have a key, otherwise we rely on static data
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export const fetchMushroomData = async (): Promise<Mushroom[]> => {
   // Returning static curated list to ensure specific assets (Morel) are displayed as requested
+  // This works even without an API key
   return [
     {
       id: '1',

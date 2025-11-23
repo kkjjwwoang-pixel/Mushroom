@@ -53,6 +53,10 @@
   }
 }
 </script>
+<script>
+  // Simple polyfill for process.env to prevent crashes in browser environments
+  window.process = { env: { API_KEY: '' } };
+</script>
 </head>
   <body>
     <div id="root"></div>
