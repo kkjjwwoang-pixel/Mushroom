@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Header } from './components/Header';
-import { Marquee } from './components/Marquee';
-import { MushroomCard } from './components/MushroomCard';
-import { FooterHero } from './components/FooterHero';
-import { fetchMushroomData } from './services/geminiService';
-import { Mushroom, LoadingState } from './types';
+import { Header } from './components/Header.tsx';
+import { Marquee } from './components/Marquee.tsx';
+import { MushroomCard } from './components/MushroomCard.tsx';
+import { FooterHero } from './components/FooterHero.tsx';
+import { fetchMushroomData } from './services/geminiService.ts';
+import { Mushroom, LoadingState } from './types.ts';
 import { Loader2 } from 'lucide-react';
 
 const App: React.FC = () => {

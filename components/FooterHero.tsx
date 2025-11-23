@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlobShape } from './BlobShape';
+import { BlobShape } from './BlobShape.tsx';
 
 export const FooterHero: React.FC = () => {
   return (

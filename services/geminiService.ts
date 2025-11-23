@@ -1,5 +1,5 @@
 import { GoogleGenAI, Type } from "@google/genai";
-import { Mushroom } from "../types";
+import { Mushroom } from "../types.ts";
 
 // Safely handle process.env for local/browser environments where 'process' is undefined
 const getApiKey = () => {

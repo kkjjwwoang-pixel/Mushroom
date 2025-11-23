@@ -1,6 +1,6 @@
 import React from 'react';
-import { Mushroom } from '../types';
-import { BlobShape } from './BlobShape';
+import { Mushroom } from '../types.ts';
+import { BlobShape } from './BlobShape.tsx';
 
 interface MushroomCardProps {
   mushroom: Mushroom;
